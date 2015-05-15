@@ -612,3 +612,8 @@ button:hover i {
 
 button[disabled]:hover i {
     color: #FFF;}
+
+#alertnew {
+    color:#FFF;
+
+}
