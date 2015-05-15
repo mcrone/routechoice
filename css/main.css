@@ -396,8 +396,7 @@ h3{
 
 		body {
 			margin: 0;
-			font: 1em/1.618 Open Sans, Sans-serif;
-min-height: 500px;
+            min-height: 500px;
 		}
 
 		.demo-wrap {
