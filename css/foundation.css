@@ -4582,7 +4582,8 @@ background: #f2f2f2;} /* Colour of subnav bar */
   margin-bottom: auto;
   padding: 0.25rem 0.5rem 0.25rem;
   font-size: 0.6875rem;
-  background-color: #008CBA;
+  /* Remove Background colour for label */
+  /*background-color: #008CBA;*/
   color: #FFFFFF; }
   .label.radius {
     border-radius: 3px; }
