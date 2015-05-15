@@ -15,6 +15,7 @@
         <script type='text/javascript' src="/js/foundation.js"></script>
         <script type='text/javascript' src="/js/foundation.topbar.js"></script>
         <script type='text/javascript' src="/js/functions.js"></script>
+        <script type='text/javascript' src="/js/timer.js"></script>
         <script type='text/javascript' src="/js/shortcut.js"></script>
         <link rel="shortcut icon" href="/ico/Orienteering.ico" >
         <link rel="stylesheet" href="/css/foundation.css"/>
@@ -80,6 +81,8 @@
             <button class="control-buttons" onclick="NextCurrentWeek(week,num);"><i class="fi-next"></i></button>
     
             <button class="control-buttons" onclick="showRandomCurrentWeekPage(week);"><i class="fi-shuffle"></i></button>
+
+            <input type="number" min="1" max="15" id="inputtime" value="" />
         </div>
     </div>
     
@@ -115,6 +118,9 @@
 
     var num = 6;
     var week = 4;
+    var recommendedtime = 7;
+
+    document.getElementById('inputtime').value = recommendedtime;
     
     MapShortcutsCurrentWeek(week,num);
 
