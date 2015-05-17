@@ -1,4 +1,5 @@
-function StartRoute() {
+function StartRoute(time) {
+  time = document.getElementById('inputtime').value;
   document.getElementById('img1').style.display='none';
   document.getElementById('img2').style.display='block';
   $('#img2')
@@ -21,7 +22,7 @@ function StartRoute() {
   $('#revealbuttonmobile').removeAttr('disabled');
   $('#startbutton').removeAttr('disabled');
   $('#startbuttonmobile').removeAttr('disabled');
-}, 5*1000);
+}, time*1000);
 };
 
 
