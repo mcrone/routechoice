@@ -16,6 +16,9 @@
         <script type='text/javascript' src="/js/foundation.topbar.js"></script>
         <script type='text/javascript' src="/js/functions.js"></script>
         <script type='text/javascript' src="/js/shortcut.js"></script>
+        <!-- for zoom from www.jacklmoore.com/zoom Thanks to Cristina Luis-->
+        <script type='text/javascript' src="/js/jquery.zoom.js"></script>
+
         <link rel="shortcut icon" href="/ico/Orienteering.ico" >
         <link rel="stylesheet" href="/css/foundation.css"/>
         <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
@@ -80,6 +83,9 @@
             <button class="control-buttons" onclick="NextSprint(num);"><i class="fi-next"></i></button>
     
             <button class="control-buttons" onclick="showRandomSprintPage();"><i class="fi-shuffle"></i></button>
+
+            <span class="label">Time (1-15)</span>
+            <input type="number" min="1" max="15" id="inputtime" value="" />
         </div>
     </div>
     
@@ -114,6 +120,9 @@
 <script>
 
     var num = 4;
+    var recommendedtime = 5;
+
+    document.getElementById('inputtime').value = recommendedtime;
 
     MapShortcutsSprintPage(num);
     
@@ -126,6 +135,11 @@
     
 <script>
     $(document).foundation();
+</script>
+
+<script>
+    $(document).ready(function(){
+    });
 </script>
 
 </body>
