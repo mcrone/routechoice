@@ -607,7 +607,10 @@ button:hover i {
 
 #inputtime {
     margin:15%;
-    width:70%;   
+    width:70%;
+    background-color: #333333;
+    font-weight:800;
+    color:#FFF;
 }
 
 button[disabled]:hover i {
