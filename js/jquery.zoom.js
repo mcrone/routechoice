@@ -33,7 +33,7 @@
 		$target.css('position', /(absolute|fixed)/.test(position) ? position : 'relative');
 		$target.css('overflow', 'hidden');
 
-		img.style.width = img.style.height = '';
+		//img.style.width = img.style.height = '';
 
 		$(img)
 			.addClass('zoomImg')
