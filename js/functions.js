@@ -2,11 +2,11 @@ function StartRoute(time) {
   time = document.getElementById('inputtime').value;
   document.getElementById('img1').style.display='none';
   document.getElementById('img2').style.display='block';
-  //$('#img2')
-  //.wrap('<span style="display:inline-block"></span>')
-  //.css('display', 'block')
-  //.parent()
-  //.zoom({on:'click', magnify:1.5});
+  $('#img2')
+  .wrap('<span style="display:inline-block"></span>')
+  .css('display', 'block')
+  .parent()
+  .zoom({on:'click', magnify:1.5});
   document.getElementById('img3').style.display='none';
   document.getElementById('revealbutton').disabled='true';
   document.getElementById('revealbuttonmobile').disabled='true';
