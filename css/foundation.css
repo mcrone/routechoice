@@ -166,9 +166,9 @@ select {
   padding-right: 0.9375rem;
   width: 100%;
   float: left; }
-
+/*
 [class*="column"] + [class*="column"]:last-child {
-  float: right; }
+  float: right; }*/
 
 [class*="column"] + [class*="column"].end {
   float: left; }
