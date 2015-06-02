@@ -1,13 +1,12 @@
 function StartRoute(time) {
   time = document.getElementById('inputtime').value;
   document.getElementById('img1').style.display='none';
-  document.getElementById('img2').style.display='block';
+  document.getElementById('img3').style.display='none';
   $('#img2')
   .wrap('<span style="display:inline-block"></span>')
   .css('display', 'block')
   .parent()
   .zoom({on:'click', magnify:1.5});
-  document.getElementById('img3').style.display='none';
   document.getElementById('revealbutton').disabled='true';
   document.getElementById('revealbuttonmobile').disabled='true';
   document.getElementById('resetbutton').disabled='true';
@@ -16,8 +15,8 @@ function StartRoute(time) {
   document.getElementById('startbuttonmobile').disabled='true' 
   setTimeout(function(){
   document.getElementById('img1').style.display='block';
-  document.getElementById('img2').style.display='none';
   document.getElementById('img3').style.display='none';
+  document.getElementById('img2').style.display='none';
   $('#revealbutton').removeAttr('disabled');
   $('#revealbuttonmobile').removeAttr('disabled');
   $('#startbutton').removeAttr('disabled');
@@ -28,8 +27,8 @@ function StartRoute(time) {
 
 function RevealRoute() {
   document.getElementById('img1').style.display='none';
-  document.getElementById('img2').style.display='none';
   document.getElementById('img3').style.display='block';
+  document.getElementById('img2').style.display='none';
   $('#resetbutton').removeAttr('disabled');
   $('#resetbuttonmobile').removeAttr('disabled');
   document.getElementById('revealbutton').disabled='true';
@@ -40,8 +39,8 @@ function RevealRoute() {
 
 function ResetRoute() {
   document.getElementById('img1').style.display='block';
-  document.getElementById('img2').style.display='none';
   document.getElementById('img3').style.display='none';
+  document.getElementById('img2').style.display='none';
   document.getElementById('resetbutton').disabled='true';
   document.getElementById('resetbuttonmobile').disabled='true';
   document.getElementById('revealbutton').disabled='true';
@@ -90,7 +89,7 @@ function showRandomWocPage() {
 };
 
 function showRandomSprintPage() {
-    var num2 = Math.round(Math.random() * 71);
+    var num2 = Math.round(Math.random() * 81);
     window.location.href = "/sprint/sprint" + num2 + '.html';
     console.log(num);
 };

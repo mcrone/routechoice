@@ -446,10 +446,14 @@ margin: 0 0 .25em;
 #hori1{
     display: block;
     margin-top: 0em;
-    margin-bottom: 0.25em;
+    margin-bottom: 0em;
     border:0;
     box-shadow: inset 0 15px 15px -15px rgba(0,0,0,0.5);
-    height:15px;
+    height:10px;
+}
+
+.copyright{
+    margin-left:1em;
 }
 
 p.intro {
