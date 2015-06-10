@@ -89,7 +89,7 @@ function showRandomWocPage() {
 };
 
 function showRandomSprintPage() {
-    var num2 = Math.round(Math.random() * 81);
+    var num2 = Math.round(Math.random() * 91);
     window.location.href = "/sprint/sprint" + num2 + '.html';
     console.log(num);
 };
