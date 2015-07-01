@@ -14,6 +14,7 @@
 	    <meta name="viewport" content="width=device-width,initial-scale=1" />
         <script type='text/javascript' src='http://www.google-analytics.com/ga.js'></script>
         <script type='text/javascript' src="/js/modernizr.js"></script>
+        <script type='text/javascript' src="/js/foundation.alert.js"></script>
         <script type='text/javascript' src="/js/foundation.js"></script>
         <script type='text/javascript' src="/js/foundation.topbar.js"></script>
         <script type='text/javascript' src="/js/functions.js"></script>
@@ -68,6 +69,11 @@
 
 
 <hr id="hori1">
+
+<div data-alert class="alert-box">
+  No new routes this week, but there will be new routes next week (09/07/2015)
+  <a href="#" class="close">&times;</a>
+</div>
  
 <div id="grid" class="row">
  
@@ -191,6 +197,7 @@ $(document).ready(function() {
     
 <script>
     $(document).foundation();
+    $(document).foundationAlerts();
 </script>
 
 
