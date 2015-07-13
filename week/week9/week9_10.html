@@ -72,7 +72,7 @@
 <div class="row">
     <div class="show-for-medium-up large-1 medium-2 columns">
         <div class="icon-bar vertical six-up">
-            <button class="control-buttons" onclick="PreviousCurrentWeek(week,num);"><i class="fi-previous"></i></button>
+            <button class="control-buttons" onclick="PreviousWeek(week,num);"><i class="fi-previous"></i></button>
 
             <button class="control-buttons" id="startbutton" onclick="StartRoute();"><i class="fi-play"></i></button>
 
@@ -82,11 +82,29 @@
 
             <button class="control-buttons" disabled><i class="fi-next"></i></button>
 
-            <button class="control-buttons" onclick="showRandomCurrentWeekPage(week);"><i class="fi-shuffle"></i></button>
+            <button class="control-buttons" onclick="showRandomWeekPage(week);"><i class="fi-shuffle"></i></button>
 
             <span class="label">Time (1-15)</span>
             <input type="number" min="1" max="15" id="inputtime" value="" />
         </div>
+    </div>
+
+    <div class="show-for-small-only small-4 columns" style="margin-bottom:0.25em">
+            <button class="control-buttons" onclick="PreviousWeek(week,num);"><i class="fi-previous"></i></button>
+
+            <button class="control-buttons" id="startbuttonmobile" onclick="StartRoute();"><i class="fi-play"></i></button>
+    </div>
+
+    <div class="show-for-small-only small-4 columns" style="margin-bottom:0.25em">
+            <button class="control-buttons" id="revealbuttonmobile" onclick="RevealRoute();" disabled><i class="fi-map small"></i></button>
+
+            <button class="control-buttons" id="resetbuttonmobile" onclick="ResetRoute();" disabled><i class="fi-refresh"></i></button>
+    </div>
+
+    <div class="show-for-small-only small-4 columns" style="margin-bottom:0.25em">
+            <button class="control-buttons" disabled><i class="fi-next"></i></button>
+
+            <button class="control-buttons" onclick="showRandomWeekPage(week);"><i class="fi-shuffle"></i></button>
     </div>
 
     <div class="show-for-small-only small-4 columns" style="margin-bottom:0.25em">
@@ -125,7 +143,7 @@
 
     document.getElementById('inputtime').value = recommendedtime;
 
-    MapShortcutsLastCurrentWeekPage(week,num);
+    MapShortcutsLastWeekPage(week,num);
 
 </script>
 

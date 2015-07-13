@@ -80,7 +80,7 @@
 
             <button class="control-buttons" id="resetbutton" onclick="ResetRoute();" disabled><i class="fi-refresh"></i></button>
 
-            <button class="control-buttons" disabled><i class="fi-next"></i></button>
+            <button class="control-buttons" onclick="NextSprint(num);"><i class="fi-next"></i></button>
 
             <button class="control-buttons" onclick="showRandomSprintPage();"><i class="fi-shuffle"></i></button>
 
@@ -102,7 +102,7 @@
     </div>
 
     <div class="show-for-small-only small-4 columns" style="margin-bottom:0.25em">
-            <button class="control-buttons" disabled><i class="fi-next"></i></button>
+            <button class="control-buttons" onclick="NextSprint(num);"><i class="fi-next"></i></button>
 
             <button class="control-buttons" onclick="showRandomSprintPage();"><i class="fi-shuffle"></i></button>
     </div>
@@ -124,7 +124,7 @@
 
     document.getElementById('inputtime').value = recommendedtime;
 
-    MapShortcutsLastSprintPage(num);
+    MapShortcutsSprintPage(num);
 
 
 </script>
