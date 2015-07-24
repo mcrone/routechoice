@@ -83,13 +83,13 @@ function PreviousWeek(num1, num2) {
 
 
 function showRandomWocPage() {
-    var num2 = Math.round(Math.random() * 15);
+    var num2 = Math.round(Math.random() * 20);
     window.location.href = "/woc/woc" + num2 + '.html';
     console.log(num);
 };
 
 function showRandomSprintPage() {
-    var num2 = Math.round(Math.random() * 121);
+    var num2 = Math.round(Math.random() * 131);
     window.location.href = "/sprint/sprint" + num2 + '.html';
     console.log(num);
 };
