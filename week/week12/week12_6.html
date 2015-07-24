@@ -72,7 +72,7 @@
 <div class="row">
     <div class="show-for-medium-up large-1 medium-2 columns">
         <div class="icon-bar vertical six-up">
-            <button class="control-buttons" onclick="PreviousCurrentWeek(week,num);"><i class="fi-previous"></i></button>
+            <button class="control-buttons" onclick="PreviousWeek(week,num);"><i class="fi-previous"></i></button>
 
             <button class="control-buttons" id="startbutton" onclick="StartRoute();"><i class="fi-play"></i></button>
 
@@ -80,9 +80,9 @@
 
             <button class="control-buttons" id="resetbutton" onclick="ResetRoute();" disabled><i class="fi-refresh"></i></button>
 
-            <button class="control-buttons" onclick="NextCurrentWeek(week,num);"><i class="fi-next"></i></button>
+            <button class="control-buttons" onclick="NextWeek(week,num);"><i class="fi-next"></i></button>
 
-            <button class="control-buttons" onclick="showRandomCurrentWeekPage(week);"><i class="fi-shuffle"></i></button>
+            <button class="control-buttons" onclick="showRandomWeekPage(week);"><i class="fi-shuffle"></i></button>
 
             <span class="label">Time (1-15)</span>
             <input type="number" min="1" max="15" id="inputtime" value="" />
@@ -90,7 +90,7 @@
     </div>
 
     <div class="show-for-small-only small-4 columns" style="margin-bottom:0.25em">
-            <button class="control-buttons" onclick="PreviousCurrentWeek(week,num);"><i class="fi-previous"></i></button>
+            <button class="control-buttons" onclick="PreviousWeek(week,num);"><i class="fi-previous"></i></button>
 
             <button class="control-buttons" id="startbuttonmobile" onclick="StartRoute();"><i class="fi-play"></i></button>
     </div>
@@ -102,15 +102,15 @@
     </div>
 
     <div class="show-for-small-only small-4 columns" style="margin-bottom:0.25em">
-            <button class="control-buttons" onclick="NextCurrentWeek(week,num);"><i class="fi-next"></i></button>
+            <button class="control-buttons" onclick="NextWeek(week,num);"><i class="fi-next"></i></button>
 
-            <button class="control-buttons" onclick="showRandomCurrentWeekPage(week);"><i class="fi-shuffle"></i></button>
+            <button class="control-buttons" onclick="showRandomWeekPage(week);"><i class="fi-shuffle"></i></button>
     </div>
 
     <div class="large-11 small-12 medium-10 columns" align="center">
         <img id='img1' src="/img/sprint/black2.jpg" style="display:block">
-        <img id='img3' src="/img/sprint/sprint126_2.jpg" style="display:none">
-        <img id='img2' src="/img/sprint/sprint126_1.jpg" style="display:none">
+        <img id='img3' src="/img/sprint/sprint127_2.jpg" style="display:none">
+        <img id='img2' src="/img/sprint/sprint127_1.jpg" style="display:none">
     </div>
 
 </div>
@@ -119,18 +119,18 @@
 
 <script>
 
-    var num = 5;
+    var num = 6;
     var week = 12;
-    var recommendedtime = 7;
+    var recommendedtime = 5;
 
     document.getElementById('inputtime').value = recommendedtime;
 
-    MapShortcutsCurrentWeek(week,num);
+    MapShortcutsWeek(week,num);
 
 </script>
 
 <div class="copyright">
-<h6>Paredes de Coura. Copyright owner: Clube De Orientacao Do Minho. Email<span style="unicode-bidi:bidi-override; direction: rtl;"> oc.eciohcetuor@leahcim </span>to remove this map.</h6>
+<h6>Unknown. Copyright owner: Unknown. Email<span style="unicode-bidi:bidi-override; direction: rtl;"> oc.eciohcetuor@leahcim </span>to remove this map.</h6>
 </div>
 
 
