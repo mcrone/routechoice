@@ -81,6 +81,14 @@ function PreviousWeek(num1, num2) {
     window.location.href = '/week/week' + num1 + '/week' + num1 + '_' + (num2-1) + '.html';
 };
 
+function Nextfc(num) {
+    window.location.href = '/fc/start' + (num+1) + '.html';
+};
+
+function Previousfc(num) {
+    window.location.href = '/fc/start' + (num-1) + '.html';
+};
+
 
 function showRandomWocPage() {
     var num2 = Math.round(Math.random() * 20);
@@ -89,7 +97,7 @@ function showRandomWocPage() {
 };
 
 function showRandomSprintPage() {
-    var num2 = Math.round(Math.random() * 141);
+    var num2 = Math.round(Math.random() * 151);
     window.location.href = "/sprint/sprint" + num2 + '.html';
     console.log(num);
 };
@@ -109,6 +117,12 @@ function showRandomCurrentWeekPage(num) {
 function showRandomWeekPage(num) {
     var num2 = Math.round(Math.random() * 9)+1;
     window.location.href = "/week/week" + num + "/week" + num + "_" + num2 + '.html';
+    console.log(num);
+};
+
+function showRandomfcPage() {
+    var num2 = Math.round(Math.random() * 3)+1;
+    window.location.href = "/fc/start" + num2 + '.html';
     console.log(num);
 };
 
