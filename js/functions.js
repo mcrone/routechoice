@@ -97,7 +97,7 @@ function showRandomWocPage() {
 };
 
 function showRandomSprintPage() {
-    var num2 = Math.round(Math.random() * 161);
+    var num2 = Math.round(Math.random() * 191);
     window.location.href = "/sprint/sprint" + num2 + '.html';
     console.log(num);
 };

@@ -42,7 +42,7 @@
 <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
         <li class="name">
-            <a  href="/home.html"><img style="margin-left:1em; margin-top:0.25em;" src="/img/routelogo.png" width=40% height =40%></a>
+            <a  href="/home.html"><img style="margin-left:1em; margin-top:0.45em;" src="/img/routelogo.png" width=15% height =15%></a>
         </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -80,7 +80,7 @@
 
             <button class="control-buttons" id="resetbutton" onclick="ResetRoute();" disabled><i class="fi-refresh"></i></button>
 
-            <button class="control-buttons" disabled><i class="fi-next"></i></button>
+            <button class="control-buttons" onclick="NextSprint(num);"><i class="fi-next"></i></button>
 
             <button class="control-buttons" onclick="showRandomSprintPage();"><i class="fi-shuffle"></i></button>
 
@@ -102,7 +102,7 @@
     </div>
 
     <div class="show-for-small-only small-4 columns" style="margin-bottom:0.25em">
-            <button class="control-buttons" disabled><i class="fi-next"></i></button>
+            <button class="control-buttons" onclick="NextSprint(num);"><i class="fi-next"></i></button>
 
             <button class="control-buttons" onclick="showRandomSprintPage();"><i class="fi-shuffle"></i></button>
     </div>
@@ -124,7 +124,7 @@
 
     document.getElementById('inputtime').value = recommendedtime;
 
-    MapShortcutsLastSprintPage(num);
+    MapShortcutsSprintPage(num);
 
 
 </script>
