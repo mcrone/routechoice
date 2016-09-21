@@ -49,157 +49,91 @@ function ResetRoute() {
   $('#startbuttonmobile').removeAttr('disabled');
 };
 
+function URL_add_parameter(url, param, value){
+    var hash       = {};
+    var parser     = document.createElement('a');
+
+    parser.href    = url;
+
+    var parameters = parser.search.split(/\?|&/);
+
+    for(var i=0; i < parameters.length; i++) {
+        if(!parameters[i])
+            continue;
+
+        var ary      = parameters[i].split('=');
+        hash[ary[0]] = ary[1];
+    }
+
+    hash[param] = value;
+
+    var list = [];
+    Object.keys(hash).forEach(function (key) {
+        list.push(key + '=' + hash[key]);
+    });
+
+    parser.search = '?' + list.join('&');
+    return parser.href;
+}
+
 function NextSprint(num) {
-      window.location.href = '/sprint/sprint' + (num+1) + '.html';      
+      /*window.location.href = '/sprint/sprint' + (num+1) + '.html';   */
+    num = ++num
+    if (num < 200){
+        location.href = URL_add_parameter(location.href, 'num', num)}
+    else {
+        max = 200
+        location.href = URL_add_parameter(location.href, 'num', max);
+    }
+    /*window.location.search += '&num=' + num*/
 };
 
-function PreviousSprint(num) {
-      window.location.href = '/sprint/sprint' + (num-1) + '.html';
+function Previous(num) {
+      /*window.location.href = '/sprint/sprint' + (num-1) + '.html';*/
+    num = --num
+    if (num > 0){
+        location.href = URL_add_parameter(location.href, 'num', num)}
+    else {
+        location.href = URL_add_parameter(location.href, 'num', 0);
+    }
 };
 
 function NextWoc(num) {
-      window.location.href = '/woc/woc' + (num+1) + '.html';      
-};
-
-function PreviousWoc(num) {
-      window.location.href = '/woc/woc' + (num-1) + '.html';
-};
-
-function NextCurrentWeek(num1, num2) {
-     window.location.href = '/week/current/week' + num1 + '_' + (num2+1) + '.html';
-};
-
-function PreviousCurrentWeek(num1, num2) {
-     window.location.href = '/week/current/week' + num1 + '_' + (num2-1) + '.html';
-};
-
-function NextWeek(num1, num2) {
-    window.location.href = '/week/week' + num1 + '/week' + num1 + '_' + (num2+1) + '.html';
-};
-
-function PreviousWeek(num1, num2) {
-    window.location.href = '/week/week' + num1 + '/week' + num1 + '_' + (num2-1) + '.html';
+    num = ++num
+    if (num < 20){
+        location.href = URL_add_parameter(location.href, 'num', num)}
+    else {
+        max = 20
+        location.href = URL_add_parameter(location.href, 'num', max);
+    }
 };
 
 function Nextfc(num) {
-    window.location.href = '/fc/start' + (num+1) + '.html';
-};
-
-function Previousfc(num) {
-    window.location.href = '/fc/start' + (num-1) + '.html';
+    num = ++num
+    if (num < 4){
+        location.href = URL_add_parameter(location.href, 'num', num)}
+    else {
+        max = 4
+        location.href = URL_add_parameter(location.href, 'num', max);
+    }
 };
 
 
 function showRandomWocPage() {
     var num2 = Math.round(Math.random() * 20);
-    window.location.href = "/woc/woc" + num2 + '.html';
-    console.log(num);
+    location.href = URL_add_parameter(location.href, 'num', num2)
 };
 
 function showRandomSprintPage() {
-    var num2 = Math.round(Math.random() * 191);
-    window.location.href = "/sprint/sprint" + num2 + '.html';
-    console.log(num);
+    var num2 = Math.round(Math.random() * 200);
+    location.href = URL_add_parameter(location.href, 'num', num2)
 };
 
-function showRandomWeekPage1() {
-    var num2 = Math.round(Math.random() * 24)+1;
-    window.location.href = "/week/week1/week1_" + num2 + '.html';
-    console.log(num);
-};
-
-function showRandomCurrentWeekPage(num) {
-    var num2 = Math.round(Math.random() * 9)+1;
-    window.location.href = "/week/current/week" + num + "_" + num2 + '.html';
-    console.log(num);
-};
-
-function showRandomWeekPage(num) {
-    var num2 = Math.round(Math.random() * 9)+1;
-    window.location.href = "/week/week" + num + "/week" + num + "_" + num2 + '.html';
-    console.log(num);
-};
 
 function showRandomfcPage() {
     var num2 = Math.round(Math.random() * 3)+1;
-    window.location.href = "/fc/start" + num2 + '.html';
-    console.log(num);
+    location.href = URL_add_parameter(location.href, 'num', num2)
 };
-
-function MapShortcutsCurrentWeek(week,num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomCurrentWeekPage(week)});
-    shortcut.add("D", function() {NextCurrentWeek(week,num)});
-    shortcut.add("A", function() {PreviousCurrentWeek(week,num)});
-}
-
-function MapShortcutsFirstCurrentWeekPage(week,num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomCurrentWeekPage(week)});
-    shortcut.add("D", function() {NextCurrentWeek(week,num)});
-}
-
-function MapShortcutsLastCurrentWeekPage(week,num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomCurrentWeekPage(week)});
-    shortcut.add("A", function() {PreviousCurrentWeek(week,num)});
-}
-
-function MapShortcutsWeek(week,num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomWeekPage(week)});
-    shortcut.add("D", function() {NextWeek(week,num)});
-    shortcut.add("A", function() {PreviousWeek(week,num)});
-}
-
-function MapShortcutsFirstWeekPage(week,num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomWeekPage(week)});
-    shortcut.add("D", function() {NextWeek(week,num)});
-}
-
-function MapShortcutsLastWeekPage(week,num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomWeekPage(week)});
-    shortcut.add("A", function() {PreviousWeek(week,num)});
-}
-
-function MapShortcutsWeek1(week,num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomWeekPage1()});
-    shortcut.add("D", function() {NextWeek(week,num)});
-    shortcut.add("A", function() {PreviousWeek(week,num)});
-}
-
-function MapShortcutsFirstWeek1Page(week,num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomWeekPage1()});
-    shortcut.add("D", function() {NextWeek(week,num)});
-}
-
-function MapShortcutsLastWeek1Page(week,num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomWeekPage1()});
-    shortcut.add("A", function() {PreviousWeek(week,num)});
-}
 
 function MapShortcutsSprintPage(num){
     shortcut.add("W", function() {StartRoute()});
@@ -207,23 +141,7 @@ function MapShortcutsSprintPage(num){
     shortcut.add("R", function() {ResetRoute()});
     shortcut.add("Space", function() {showRandomSprintPage()});
     shortcut.add("D", function() {NextSprint(num)});
-    shortcut.add("A", function() {PreviousSprint(num)});
-}
-
-function MapShortcutsFirstSprintPage(num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomSprintPage()});
-    shortcut.add("D", function() {NextSprint(num)});
-}
-
-function MapShortcutsLastSprintPage(num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomSprintPage()});
-    shortcut.add("A", function() {PreviousSprint(num)});
+    shortcut.add("A", function() {Previous(num)});
 }
 
 function MapShortcutsWocPage(num){
@@ -232,23 +150,7 @@ function MapShortcutsWocPage(num){
     shortcut.add("R", function() {ResetRoute()});
     shortcut.add("Space", function() {showRandomWocPage()});
     shortcut.add("D", function() {NextWoc(num)});
-    shortcut.add("A", function() {PreviousWoc(num)});
-}
-
-function MapShortcutsFirstWocPage(num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomWocPage()});
-    shortcut.add("D", function() {NextWoc(num)});
-}
-
-function MapShortcutsLastWocPage(num){
-    shortcut.add("W", function() {StartRoute()});
-    shortcut.add("S", function() {RevealRoute()});
-    shortcut.add("R", function() {ResetRoute()});
-    shortcut.add("Space", function() {showRandomWocPage()});
-    shortcut.add("A", function() {PreviousWoc(num)});
+    shortcut.add("A", function() {Previous(num)});
 }
 
 
